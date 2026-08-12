@@ -1,0 +1,15 @@
+parameters:
+  phpVersion: 70400
+  level: 5
+  paths:
+    - src
+    - tests
+    - examples
+    - scripts
+  excludePaths:
+    - src/Google/Ads/GoogleAds/V*
+    - tests/Google/Ads/GoogleAds/V*
+    - tests/Google/Ads/GoogleAds/Util/FieldMasks/Proto/*
+    - metadata/*
+    - tests/metadata/*
+    - examples/LaravelSampleApp/*

@@ -1,0 +1,38 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "PHP 7.4: Compatibility Check",
+      "type": "shell",
+      "command": "composer",
+      "args": ["check:php74", "--no-interaction"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "PHP 7.4: Deep Check",
+      "type": "shell",
+      "command": "composer",
+      "args": ["check:php74-deep", "--no-interaction"],
+      "problemMatcher": []
+    },
+    {
+      "label": "PHP 7.4: PHPStan",
+      "type": "shell",
+      "command": "composer",
+      "args": ["analyze:php74", "--no-interaction"],
+      "problemMatcher": []
+    },
+    {
+      "label": "PHPUnit",
+      "type": "shell",
+      "command": "composer",
+      "args": ["test", "--no-interaction"],
+      "group": "test",
+      "problemMatcher": []
+    }
+  ]
+}
