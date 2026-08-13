@@ -27,6 +27,41 @@
       "problemMatcher": []
     },
     {
+      "label": "PHP 7.4: Syntax Lint via Docker",
+      "type": "shell",
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-v",
+        "${workspaceFolder}:/app",
+        "-w",
+        "/app",
+        "php:7.4-cli",
+        "sh",
+        "-lc",
+        "find src tests examples scripts -name \"*.php\" -exec sh -c \"output=\\$(php -l \\\"\\$1\\\" 2>&1); status=\\$?; if [ \\$status -ne 0 ]; then printf \\\"%s\\\\n\\\" \\\"\\$output\\\"; fi; exit \\$status\" sh {} \\;"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "PHP 7.4: PHPUnit via Docker",
+      "type": "shell",
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-v",
+        "${workspaceFolder}:/app",
+        "-w",
+        "/app",
+        "php:7.4-cli",
+        "vendor/bin/phpunit",
+        "tests"
+      ],
+      "problemMatcher": []
+    },
+    {
       "label": "PHPUnit",
       "type": "shell",
       "command": "composer",
