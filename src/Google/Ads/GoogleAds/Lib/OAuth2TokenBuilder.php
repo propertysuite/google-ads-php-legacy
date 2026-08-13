@@ -48,7 +48,7 @@ final class OAuth2TokenBuilder extends AbstractGoogleAdsBuilder
 
     public function __construct(
         ConfigurationLoader $configurationLoader = null,
-        ?EnvironmentalVariables $environmentalVariables = null,
+        ?EnvironmentalVariables $environmentalVariables = null
     ) {
         parent::__construct($configurationLoader, $environmentalVariables);
         $this->adcFetcher = [ApplicationDefaultCredentials::class, 'getCredentials'];

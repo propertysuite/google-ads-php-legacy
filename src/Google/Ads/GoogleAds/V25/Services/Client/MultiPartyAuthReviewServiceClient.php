@@ -213,7 +213,7 @@ class MultiPartyAuthReviewServiceClient
      *
      * @throws ValidationException
      */
-    public function __construct(array|ClientOptions $options = [])
+    public function __construct($options = [])
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
